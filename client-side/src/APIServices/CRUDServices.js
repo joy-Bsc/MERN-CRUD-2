@@ -88,7 +88,7 @@ export function Update(id, ProductName, ProductCode, Img, UnitPrice, Qty, TotalP
 
 export function Delete(id) {
     let URL = `/api/v1/DeleteProduct/${id}`; // Use backticks for string interpolation and proper URL formatting
-    return axios.delete(URL) // Use axios.delete instead of axios.get for delete operation
+    return axios.post(URL) // Use axios.delete instead of axios.get for delete operation
         .then((res) => {
             if (res.status === 200) {
                 return true;
